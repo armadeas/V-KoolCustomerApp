@@ -1,0 +1,18 @@
+<style type="text/css">.scroll{height: 100%}</style>
+<!-- <ion-header-bar class="bar-positive">
+        <h1 class="title">Add Friend</h1>
+</ion-header-bar> -->
+<ion-view class="" view-title="<img src='img/logo-promo.png' width='22%'>">
+	<ion-content class="tab-content">
+		<div class="row">
+	      <span style="color:#fff; text-align: center; margin-top: 15px; margin-bottom: 15px; font-weight:300; width: 100%; font-size:130%;">PROMO</span>
+	    </div>
+		<ion-list>
+	      <ion-item class="item-full  item-thumbnail-left" ng-repeat="promo in promo_list" href="#">
+	        <img src="{{promo.gambar}}">
+	        <h2>{{promo.judul}}</h2>
+      		<p style="white-space: normal;">{{promo.isi}}</p>
+	      </ion-item>
+	    </ion-list>
+  	</ion-content>
+</ion-view>

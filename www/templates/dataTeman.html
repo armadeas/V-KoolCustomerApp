@@ -1,0 +1,25 @@
+<ion-header-bar class="bar-positive">
+        <button class="button button-icon icon ion-ios7-minus-outline" ng-click="data.showDelete = 
+        !data.showDelete; data.showReorder=false"></button>
+        <h1 class="title">Friend List</h1>
+        <button class="button button-icon icon ion-ios7-loop" ng-click="reload()"></button>
+</ion-header-bar>
+<ion-view>
+    <ion-content padding="false" class="has-header">
+        <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="showData()">
+          </ion-refresher>
+        <ion-list show-Delete = "data.showDelete" show-Reorder = "data.showReorder">
+            <ion-item class="item-avatar item-icon-right" ng-repeat="datateman in datatemans" type="item-text-wrap" href="#/tab/teman/{{datateman.id}}">
+                <img ng-src="{{datateman.icon}}">
+                <i class="icon ion-ios7-arrow-right"></i>
+                <h2>{{datateman.nama}}
+                    <br> 
+                    <font size="2" color="gray" >Spesialis : {{datateman.spesialis}}</font>
+                </h2>
+                <ion-delete-button class="ion-minus-circled" ng-click="delete(datateman);"></ion-delete-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

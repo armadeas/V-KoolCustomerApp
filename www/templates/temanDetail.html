@@ -1,0 +1,60 @@
+<ion-header-bar class="bar-positive">
+        <button class="button button-icon icon ion-ios7-arrow-left" ng-click="back();">Back</button>
+        <h1 class="title">Friend Detail</h1>
+</ion-header-bar>
+<ion-content class="padding" ng-repeat="datateman in datateman">
+    <img ng-src="{{datateman.icon}}" style="width: 120px; height: 120px">
+    <h3>Detail :</h3>
+    <p>
+        <font size="2" color="gray" >Nama : {{datateman.nama}}</font>
+    <br>
+        <font size="2" color="gray" >Alamat : {{datateman.alamat}}</font>
+    <br>
+        <font size="2" color="gray" >Spesialis : {{datateman.spesialis}}</font>
+    <br>
+        <font size="2" color="gray" >Facebook : {{datateman.fb}}</font>
+    </p>
+    <button class="button button-balanced button-block" ng-click="editModal()">Edit Friend</button>
+</ion-content>
+<script id="edit.html" type="text/ng-template">
+        <div class="modal">
+            <ion-header-bar class="bar-stable">
+                <button class="button button-icon icon ion-ios7-close-outline" ng-click="batal()"></button>
+                <h1 class="title"> Edit Friend</h1>
+            </ion-header-bar>
+            <ion-content ng-repeat="datateman in datateman">
+                <form>
+                    <div class="list">
+                        <label class="item item-input">
+                        <span class="input-label">ID :</span>
+                            <input type="text" placeholder="{{datateman.id}}" ng-model="id" value="{{datateman.id}}" init-from-form>
+                            <p>{{datateman.id}}</p>
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Nama :</span>
+                            <input type="text" placeholder="{{datateman.nama}}" ng-model="nama" value="{{datateman.nama}}" init-from-form>
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Alamat :</span>
+                            <input type="text" placeholder="{{datateman.alamat}}" ng-model="alamat" value="{{datateman.alamat}}" init-from-form>
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Spesialis :</span>
+                            <input type="text" placeholder="{{datateman.spesialis}}" ng-model="spesialis" value="{{datateman.spesialis}}" init-from-form>
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Facebook :</span>
+                            <input type="text" placeholder="{{datateman.fb}}" ng-model="fb" value="{{datateman.fb}}" init-from-form>
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Avatar :</span>
+                            <input type="text" placeholder="{{datateman.icon}}" ng-model="icon" value="{{datateman.icon}}" init-from-form>
+                        </label>
+                        <button class="button button-positive button-block" ng-click="edit(id,nama,alamat,spesialis,fb,icon);">
+                            Save
+                        </button>
+                    </div>
+                </form>
+        </ion-content>
+        </div>
+</script>

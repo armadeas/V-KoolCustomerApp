@@ -1,0 +1,173 @@
+/* Empty. Add your own CSS if you like */
+.login-text{
+	text-align: center;
+  font-size: smaller;
+	margin-top: 15px;
+	color: #fff;
+}
+.login-text a{
+	color: #fff;
+	font-weight: 600;
+	text-decoration: none;
+}
+form i.icon.error {
+  color: #ef4e3a; }
+
+form input + i.icon.error {
+  display: none;
+  margin-left: 8px; }
+
+form.ng-submitted input.ng-invalid + i.icon.error {
+  display: block; }
+
+form .has-error {
+  border-left: 3px solid #cc2511;
+  border-right: 3px solid #cc2511;
+}
+
+form .has-success {
+  border-left: 3px solid #3d8b3d;
+  border-right: 3px solid #3d8b3d;
+}
+
+form.ng-submitted input.ng-valid + i.icon.error {
+  display: none; }
+
+.validated {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /*padding: 0px;*/
+  width: 100%; }
+
+.validated .input-label {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 30%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 30%;
+  -ms-flex: 0 0 30%;
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+
+.validated input {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 78%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 78%;
+  -ms-flex: 0 0 78%;
+  flex: 0 0 78%;
+  max-width: 78%;
+}
+
+.validated error {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 10%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 10%;
+  -ms-flex: 0 0 10%;
+  flex: 0 0 10%;
+  max-width: 10%;
+}
+.landing-page{
+	background: url('../img/bg-home.png');
+	background-repeat: no-repeat;
+	background-size: auto 115%;
+  background-position: 55% 65%;
+}
+.login-view{
+	background: url('../img/bg-login.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom center;
+}
+.tab-vkool>.tabs{
+	background-color: #000;
+	border-color: #000;
+}
+.bar-vkool{
+	background-image: url('../img/pattern-nav.png') !important;
+	background-repeat: repeat;
+
+	/*background-color: #000;
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+	border : solid 1px #000;*/
+}
+/*.bar-light{
+	background-color: rgba(255,255,255,.66) !important;
+}
+.scroll-content{
+	overflow: visible !important;
+}*/
+.login-top-text{
+	color: #fff;
+	font-style: italic;
+	width: 100%;
+	text-align: center;
+	font-weight: 300;
+}
+.logo-login{
+  width: 70%;
+}
+.register-content{
+  background: url('../img/bg-page.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 30px;
+}
+.list-promo{
+	background-color: transparent;
+	border-color: transparent;
+}
+.list-promo>.item-content{
+	background-color: transparent;
+	padding: 0 20px 0 20px;
+}
+.list-promo>.item-content>.gambar-promo{
+  margin: 5px;
+}
+.list-promo>.item-content>.card{
+	background-color: transparent;
+	margin: 5px;
+}
+.list-promo>.item-content>.card>.item{
+	background-color: transparent;
+}
+.custom-popup .popup{
+  width: 90%;
+}
+.tab-content{
+  background: url('../img/bg-page.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.list-shop{
+  background-color: transparent;
+  border-color: transparent;
+}
+.list-shop>.item-content{
+  background-color: transparent;
+  padding: 0 15px 0 15px;
+}
+.list-shop>.item-content>.gambar-shop{
+  /*margin: 5px;*/
+  margin-top: 10px;
+  margin-bottom: -5px;
+}
+.list-shop>.item-content>.card{
+  background-color: transparent;
+  margin: 5px;
+}
+.list-shop>.item-content>.card>.item{
+  background-color: transparent;
+}
+.button-bar>.button .icon:before, .button-bar>.button:before {
+  /*line-height:150% !important;*/
+  line-height: inherit;
+}
