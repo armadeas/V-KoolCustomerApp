@@ -72,6 +72,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+    .state('tab.reward', {
+      url: '/reward',
+      views: {
+        'tab-reward': {
+          templateUrl: 'templates/tab-reward.html',
+          controller: 'rewardCtrl'
+        }
+      }
+    })
     .state('tab.teman', {
       url: '/teman',
       views: {
@@ -138,6 +147,32 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   }
 
 }])
+.directive('armadeas', function () {
+  return {
+    link: function(scope, element, attr) {
+      /*element.css({
+       backgroundColor: 'red'
+      });*/
+      var selisih_reward = angular.element(document.querySelector('#bottom-button'))[0].offsetTop - angular.element(document.querySelector('.reward-content'))[0].offsetTop;
+      var persen_selisih = selisih_reward / 100 * 18;
+      console.log(persen_selisih);
+      console.log(selisih_reward);
+      console.log(selisih_reward - persen_selisih);
+      console.log(angular.element(document.querySelector('#bottom-button'))[0].offsetTop);
+      //console.log(element[0]);
+      /*console.log(element.children().children().children().children().find('.armadeasScroll'));*/
+      //console.log(element.find('ion-scroll')[0].offsetTop);
+      //console.log(element.find('ion-scroll')[0]);
+      element.css({
+        height : selisih_reward - 95 + 'px'
+      });
+      angular.element(document.querySelector('#scrollUsed')).css({
+        height: selisih_reward - 135 + 'px',
+        backgroundColor: '#fff'
+      });
+    }
+  }
+})
 .directive('validated', ['$parse', function($parse) {
   return {
     restrict: 'AEC',

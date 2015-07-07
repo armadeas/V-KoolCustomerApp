@@ -171,3 +171,35 @@ form.ng-submitted input.ng-valid + i.icon.error {
   /*line-height:150% !important;*/
   line-height: inherit;
 }
+.list-reward{
+  background-color: transparent;
+  border-color: transparent;
+}
+.list-reward .item-content{
+  background-color: transparent;
+  padding: 1% 2% 1% 2%;
+}
+.list-reward .item-divider .item-content{
+  background-color: transparent;
+  padding: 0 2% 0 2%;
+}
+.list-reward .item-divider{
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+.list-reward .item-content>.gambar-reward{
+  /*margin: 5px;*/
+  margin-top: 10px;
+  margin-bottom: -5px;
+}
+.list-reward .item-content>.card{
+  background-color: transparent;
+  margin: 5px;
+}
+.list-reward .item-content>.card>.item{
+  background-color: transparent;
+}
+.list-reward .list-item .item-content{
+  font-size: 90%;
+  color: #848484;
+}
