@@ -1,0 +1,63 @@
+<style type="text/css">.scroll{height: 100%}</style>
+<ion-view class="" view-title="<img src='img/logo-reward.png' width='22%'>">
+	<ion-content class="padding tab-content"  scroll="false">
+		<div class="row">
+	      <span style="color:#fff; text-align: center; margin-top: 15px; margin-bottom: 5px; font-weight:300; width: 100%; font-size:130%;">REWARD</span>
+	    </div>
+	    <div class="row">
+	      <span style="color:#fff; text-align: left; margin-top: 10px; margin-bottom: 2px; font-weight:300; width: 50%; font-size:110%; padding-left:10px;">Rinaldi</span>
+	      <span style="color:#fff; text-align: right; margin-top: 10px; margin-bottom: 2px; font-weight:300; width: 50%; font-size:110%; padding-right:10px;">Total Point : 420</span>
+	    </div>
+	    <ion-scroll armadeas zooming="false" class="reward-content" direction="y"  style="width: 100%;">
+			<ion-list class="list list-inset list-reward">
+		      	<ion-item class="item-divider" href="#">
+			      	<div class="row" style="padding:0">
+					  <div class="col col-50">Earned Point</div>
+					  <div class="col col-25">Date</div>
+					  <div class="col col-25">Expired</div>
+					</div>
+		      	</ion-item>
+		      	<!-- <ion-item class="item-full  item-thumbnail-left" ng-repeat="promo in promo_list" href="#"> -->
+		        <ion-item class="item list-item" ng-repeat="point_reward in point_reward_list" href="#">
+		        	<div class="row" style="padding:0">
+					  <div class="col col-50"><span style="float:left;">{{point_reward.earned_point}}</span><span style="float:right; color:black;">{{point_reward.point}}</span></div>
+					  <div class="col col-25">{{point_reward.date}}</div>
+					  <div class="col col-25" style="text-align:right">{{point_reward.expired}}</div>
+					</div>
+		      	</ion-item>
+		    </ion-list>
+		    <div style="clear:both;margin:15px;"></div>
+		    <ion-list class="list list-inset list-reward">
+		      	<ion-item class="item-divider" href="#">
+			      	<div class="row" style="padding:0">
+					  <div class="col col-33">Used Point</div>
+					  <div class="col col-33"></div>
+					  <div class="col col-33" style="text-align:right">Redeem</div>
+					</div>
+		      	</ion-item>
+		      	<!-- <ion-item class="item-full  item-thumbnail-left" ng-repeat="promo in promo_list" href="#"> -->
+	    		<ion-scroll jaja zooming="false" id="scrollUsed" class="promo-content armadeasScroll" direction="y"  style="width: 100%">
+		        <ion-item class="item list-item" ng-repeat="used_point in used_point_list" href="#">
+		        	<div class="row" style="padding:0">
+					  <div class="col col-33"><img ng-if="used_point.logo_used != ''" src="{{used_point.logo_used}}" width="20px" style="vertical-align:middle"> {{used_point.used_as}}</div>
+					  <div class="col col-33" style="color:#000;text-align:right">{{used_point.point}}</div>
+					  <div class="col col-33" style="text-align:right">{{used_point.date}}</div>
+					</div>
+		      	</ion-item>
+		      	</ion-scroll>
+		    </ion-list>
+	    </ion-scroll>
+	    	<div class="row" id="bottom-button" style="bottom:0;left:0;position:absolute;padding: 2%;">
+		  	<div class="col col-50">
+			  	<button class="button button-small button-energized" style="width:80%">
+				  ADD POINT
+				</button>
+			</div>
+		  	<div class="col col-50">
+		  		<button class="button button-small button-energized" style="float:right;width:80%">
+				  REDEEM
+				</button>
+		  	</div>
+		</div>
+  	</ion-content>
+</ion-view>
