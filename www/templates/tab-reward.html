@@ -8,7 +8,7 @@
 	      <span style="color:#fff; text-align: left; margin-top: 10px; margin-bottom: 2px; font-weight:300; width: 50%; font-size:110%; padding-left:10px;">Rinaldi</span>
 	      <span style="color:#fff; text-align: right; margin-top: 10px; margin-bottom: 2px; font-weight:300; width: 50%; font-size:110%; padding-right:10px;">Total Point : 420</span>
 	    </div>
-	    <ion-scroll armadeas zooming="false" class="reward-content" direction="y"  style="width: 100%;">
+	    <ion-scroll zooming="false" class="reward-content rewardScrollMain" direction="y"  style="width: 100%;">
 			<ion-list class="list list-inset list-reward">
 		      	<ion-item class="item-divider" href="#">
 			      	<div class="row" style="padding:0">
@@ -20,8 +20,7 @@
 		      	<!-- <ion-item class="item-full  item-thumbnail-left" ng-repeat="promo in promo_list" href="#"> -->
 		        <ion-item class="item list-item" ng-repeat="point_reward in point_reward_list" href="#">
 		        	<div class="row" style="padding:0">
-					  <div class="col col-50"><span style="float:left;">{{point_reward.earned_point}}</span><span style="float:right; color:black;">{{point_reward.point}}</span></div>
-					  <div class="col col-25">{{point_reward.date}}</div>
+					  <div class="col col-50"><span style="float:left;text-overflow: ellipsis; white-space: nowrap; display:block;">{{point_reward.earned_point}}</span><span style="float:right; color:black; display:block;">{{point_reward.point}}</span></div> <div class="col col-25">{{point_reward.date}}</div>
 					  <div class="col col-25" style="text-align:right">{{point_reward.expired}}</div>
 					</div>
 		      	</ion-item>
@@ -36,10 +35,10 @@
 					</div>
 		      	</ion-item>
 		      	<!-- <ion-item class="item-full  item-thumbnail-left" ng-repeat="promo in promo_list" href="#"> -->
-	    		<ion-scroll jaja zooming="false" id="scrollUsed" class="promo-content armadeasScroll" direction="y"  style="width: 100%">
+	    		<ion-scroll zooming="false" id="scrollUsed" class="promo-content armadeasScroll" direction="y"  style="width: 100%">
 		        <ion-item class="item list-item" ng-repeat="used_point in used_point_list" href="#">
 		        	<div class="row" style="padding:0">
-					  <div class="col col-33"><img ng-if="used_point.logo_used != ''" src="{{used_point.logo_used}}" width="20px" style="vertical-align:middle"> {{used_point.used_as}}</div>
+					  <div class="col col-33" style="text-overflow: ellipsis; white-space: nowrap; display:block;"><img ng-if="used_point.logo_used != ''" ng-src="{{used_point.logo_used}}" width="20px" style="vertical-align:middle"> {{used_point.used_as}}</div>
 					  <div class="col col-33" style="color:#000;text-align:right">{{used_point.point}}</div>
 					  <div class="col col-33" style="text-align:right">{{used_point.date}}</div>
 					</div>

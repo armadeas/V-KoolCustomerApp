@@ -9,7 +9,7 @@
 	    </div>
 		<ion-list>
 	      <ion-item class="item-full  item-thumbnail-left" ng-repeat="promo in promo_list" href="#">
-	        <img src="{{promo.gambar}}">
+	        <img ng-src="{{promo.gambar}}">
 	        <h2>{{promo.judul}}</h2>
       		<p style="white-space: normal;">{{promo.isi}}</p>
 	      </ion-item>

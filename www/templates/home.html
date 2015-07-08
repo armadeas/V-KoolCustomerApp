@@ -24,7 +24,7 @@
     <ion-scroll zooming="false" class="promo-content" direction="y"  style="width: 100%; height: 30% !important">
     <ion-list>
       <ion-item class="item-full list-promo" ng-repeat="promo in promo_list" href="#">
-        <img src="{{promo.gambar}}" width="100%" class="gambar-promo">
+        <img ng-src="{{promo.gambar}}" width="100%" class="gambar-promo">
       </ion-item>
     </ion-list>
     </ion-scroll>

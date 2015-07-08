@@ -203,3 +203,62 @@ form.ng-submitted input.ng-valid + i.icon.error {
   font-size: 90%;
   color: #848484;
 }
+.news-list .item-content{
+  padding-right: 10px;
+  min-height: 100px;
+  max-height: 100px;
+}
+.news-list .item-content .news-title{
+  font-size:90%;
+  white-space: normal;
+}
+.news-list .item-content .thumb-news{
+  white-space: normal;
+}
+@media screen 
+  and (device-width: 320px){
+    .news-list .item-content .thumb-news{
+      font-size: 80%
+    }
+}
+.coupon-list .item{
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-radius: 7px;
+}
+.coupon-list .item-content{
+  padding-right: 10px;
+  padding-left: 90px;
+  min-height: 90px;
+  max-height: 90px;
+}
+.coupon-list .coupon-logo{
+  max-height: 70px !important;
+  max-width: 70px !important;
+}
+.coupon-list .item-content .coupon-title{
+  font-size: 90%;
+  white-space: normal;
+}
+.coupon-list .item-content .coupon-thumb{
+  line-height: 100%;
+  white-space: normal;
+}
+.coupon-list .item-content .coupon-label.new{
+  background : url('../img/label-new.png');
+  background-size: 100%;
+}
+.coupon-list .item-content .coupon-label.used{
+  background : url('../img/label-used.png');
+  background-size: 100%;
+}
+.coupon-list .item-content .coupon-label{
+  position: absolute;
+  top: -9px;
+  right: -13px;
+  width: 60px;
+  z-index: 999;
+  height: 60px;
+}
+
+

@@ -81,6 +81,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+    .state('tab.news', {
+      url: '/news',
+      views: {
+        'tab-news': {
+          templateUrl: 'templates/tab-news.html',
+          controller: 'newsCtrl'
+        }
+      }
+    })
+    .state('tab.coupon', {
+      url: '/coupon',
+      views: {
+        'tab-coupon': {
+          templateUrl: 'templates/tab-coupon.html',
+          controller: 'couponCtrl'
+        }
+      }
+    })
     .state('tab.teman', {
       url: '/teman',
       views: {
@@ -147,18 +165,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   }
 
 }])
-.directive('armadeas', function () {
+.directive('rewardScrollMain', function () {
   return {
+    restrict : 'C',
     link: function(scope, element, attr) {
       /*element.css({
        backgroundColor: 'red'
       });*/
       var selisih_reward = angular.element(document.querySelector('#bottom-button'))[0].offsetTop - angular.element(document.querySelector('.reward-content'))[0].offsetTop;
       var persen_selisih = selisih_reward / 100 * 18;
-      console.log(persen_selisih);
+      /*console.log(persen_selisih);
       console.log(selisih_reward);
       console.log(selisih_reward - persen_selisih);
-      console.log(angular.element(document.querySelector('#bottom-button'))[0].offsetTop);
+      console.log(angular.element(document.querySelector('#bottom-button'))[0].offsetTop);*/
       //console.log(element[0]);
       /*console.log(element.children().children().children().children().find('.armadeasScroll'));*/
       //console.log(element.find('ion-scroll')[0].offsetTop);

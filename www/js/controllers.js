@@ -295,6 +295,85 @@ angular.module('starter.controllers', ['ionic', 'ionic-datepicker'])
     'date' : '15 Dec 15'}
 */  ];
 })
+.controller('newsCtrl', function($scope){
+  $scope.news_list=[
+    {'judul' : 'PENGAKUAN MURI ATAS TEKNOLOGI V-KOOL',
+    'gambar' : 'img/promo/1.png',
+    'isi'    : 'Fri, 7 Jun at 09:30 AM'}, 
+    {'judul' : 'V-KOOL Lounge di Indonesia International Motor Show 2014',
+    'gambar' : 'img/promo/2.png',
+    'isi'    : 'Sat, 9 Jun at 10:18 PM'}, 
+    {'judul' : 'MAX-R Catat Rekor MURI Mobil Konsep Terpanjang',
+    'gambar' : 'img/promo/3.png',
+    'isi'    : 'Sun, 24 Dec at 06:18 PM'}];
+})
+.controller('couponCtrl', function($scope){
+  $scope.coupon_data_list=[
+    {'coupon_type' : 'New',
+    'total' : '126'},
+    {'coupon_type' : 'Used / Expired',
+    'total' : '60'}
+  ];
+  $scope.coupon_list=[
+    {'judul' : 'Domino Pizza',
+    'gambar' : 'img/reward/domino_pizza-logo.png',
+    'nominal': 'Rp. 120.000',
+    'expired': 'Expired 28 December 2015 - 12:30 AM',
+    'isi'    : 'Free Makan di Domino Pizza'}, 
+    {'judul' : 'Mc Donalds',
+    'gambar' : 'img/reward/mc-logo.png',
+    'nominal': 'Rp. 80.000',
+    'expired': 'Expired 16 June 2015 - 12:30 AM',
+    'isi'    : 'Dapatkan Potongan cuma-cuma seharga'}, 
+    {'judul' : 'Pulsa Telkomsel',
+    'gambar' : 'img/reward/telkomsel-logo.png',
+    'nominal': 'Rp. 75.000',
+    'expired': 'Expired 12 June 2015 - 09:30 AM',
+    'isi'    : 'Dapatkan Voucher Telkomsel senilai'},
+    {'judul' : 'PENGAKUAN MURI ATAS TEKNOLOGI V-KOOL',
+    'gambar' : 'img/promo/1.png',
+    'nominal': 'Rp. 120.000',
+    'expired': 'Expired 28 December 2015 - 12:30 AM',
+    'isi'    : 'Fri, 7 Jun at 09:30 AM'}, 
+    {'judul' : 'V-KOOL Lounge di Indonesia International Motor Show 2014',
+    'gambar' : 'img/promo/2.png',
+    'nominal': 'Rp. 120.000',
+    'expired': 'Expired 28 December 2015 - 12:30 AM',
+    'isi'    : 'Sat, 9 Jun at 10:18 PM'}, 
+    {'judul' : 'MAX-R Catat Rekor MURI Mobil Konsep Terpanjang',
+    'gambar' : 'img/promo/3.png',
+    'nominal': 'Rp. 120.000',
+    'expired': 'Expired 28 December 2015 - 12:30 AM',
+    'isi'    : 'Sun, 24 Dec at 06:18 PM'},
+    {'judul' : 'PENGAKUAN MURI ATAS TEKNOLOGI V-KOOL',
+    'gambar' : 'img/promo/1.png',
+    'nominal': 'Rp. 120.000',
+    'expired': 'Expired 28 December 2015 - 12:30 AM',
+    'isi'    : 'Fri, 7 Jun at 09:30 AM'}, 
+    {'judul' : 'V-KOOL Lounge di Indonesia International Motor Show 2014',
+    'gambar' : 'img/promo/2.png',
+    'nominal': 'Rp. 120.000',
+    'expired': 'Expired 28 December 2015 - 12:30 AM',
+    'isi'    : 'Sat, 9 Jun at 10:18 PM'}, 
+    {'judul' : 'MAX-R Catat Rekor MURI Mobil Konsep Terpanjang',
+    'gambar' : 'img/promo/3.png',
+    'nominal': 'Rp. 120.000',
+    'expired': 'Expired 28 December 2015 - 12:30 AM',
+    'isi'    : 'Sun, 24 Dec at 06:18 PM'}];
+  $scope.used_point_list=[
+    {'logo_used' : 'img/reward/mc-logo.png',
+    'used_as' : 'Mc Donalds',
+    'point' : '-40 pts',
+    'date' : '26 Oct 15'},
+    {'logo_used' : 'img/reward/domino_pizza-logo.png',
+    'used_as' : 'Domino Pizza',
+    'point' : '-52 pts',
+    'date' : '12 Jun 15'},
+    {'logo_used' : 'img/reward/telkomsel-logo.png',
+    'used_as' : 'Telkomsel 100K',
+    'point' : '-32 pts',
+    'date' : '22 Jul 15'}];
+})
 .controller('dataTemanCtrl', function($scope,$state, temanService){
     $scope.showData = function() {
       temanService.getAll().success(function(data) {

@@ -1,0 +1,35 @@
+<style type="text/css">.scroll{height: 100%}</style>
+<ion-view class="" view-title="<img src='img/logo-coupon.png' width='22%'>">
+	<ion-content class="padding tab-content"  scroll="true">
+		<div class="row">
+	      <span style="color:#fff; text-align: center; margin-top: 15px; margin-bottom: 15px; font-weight:300; width: 100%; font-size:130%;">COUPON</span>
+	    </div>
+	    <ion-list class="list list-inset list-reward">
+	      	<ion-item class="item-divider" href="#">
+		      	<div class="row" style="padding:0">
+				  <div class="col col-50">COUPON</div>
+				</div>
+	      	</ion-item>
+	      	<!-- <ion-item class="item-full  item-thumbnail-left" ng-repeat="promo in promo_list" href="#"> -->
+	        <ion-item class="item list-item" ng-repeat="coupon_data in coupon_data_list" href="#">
+	        	<div class="row" style="padding:0">
+				  <div class="col col-75">{{coupon_data.coupon_type}}</div>
+				  <div class="col col-25" style="text-align:right">{{coupon_data.total}}</div>
+				</div>
+	      	</ion-item>
+		</ion-list>
+		<div style="clear:both;margin:10px;"></div>
+	    <ion-scroll zooming="false" class="" direction="y"  style="width: 100%; height : 70%;">
+		<ion-list class="coupon-list">
+	      <ion-item class="item-full item-thumbnail-left" ng-repeat="coupon in coupon_list" href="#">
+	        <img ng-src="{{coupon.gambar}}" class="coupon-logo">
+	        <h2 class="coupon-title">{{coupon.judul}}</h2>
+      		<p class="coupon-thumb">{{coupon.isi}}</p>
+      		<p class="coupon-thumb">{{coupon.nominal}}</p>
+      		<p class="coupon-thumb">{{coupon.expired}}</p>
+      		<div class="coupon-label new"></div>
+	      </ion-item>
+	    </ion-list>
+	    </ion-scroll>
+  	</ion-content>
+</ion-view>
