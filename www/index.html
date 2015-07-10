@@ -19,6 +19,7 @@
     <!--<script src="lib/ionic-material/dist/ionic.material.min.js"></script>-->
     <script src="lib/ionic-datepicker/dist/templates.js"></script>
     <script src="lib/ionic-datepicker/dist/ionic-datepicker.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -42,8 +43,8 @@
     <ion-side-menus>
       <!-- Center content -->
       <ion-side-menu-content>
-       <ion-nav-bar class="bar-dark">
-        <ion-nav-back-button class="button-icon ion-arrow-left-c">
+       <ion-nav-bar class="bar-dark" align-title="center">
+        <ion-nav-back-button class="button-icon ion-ios-arrow-back">
         </ion-nav-back-button>
         <ion-nav-buttons side="right">
           <button class="button button-icon button-clear ion-navicon" menu-toggle="right"></button>
@@ -53,7 +54,7 @@
       <ion-nav-view animation="slide-left-right"></ion-nav-view>
       </ion-side-menu-content>
         <!-- Right menu -->
-      <ion-side-menu side="right">
+      <ion-side-menu side="right" width="235">
         <header class="bar bar-header bar-energized">
           <h1 class="title">iKool</h1>
         </header>
@@ -68,7 +69,7 @@
             <ion-item nav-clear="" menu-close="" href="#/app/playlists">
               Help
             </ion-item>
-            <ion-item nav-clear="" menu-close="" href="#/app/playlists">
+            <ion-item nav-clear="" menu-close="" ui-sref="login">
               Logout
             </ion-item>
           </ion-list>

@@ -30,7 +30,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Each state's controller can be found in controllers.js
     $stateProvider
       .state('login', {
-        url: '/login',
+        url: '/login/:status',
+        data: {status:null},
         templateUrl: 'templates/login.html',
         controller: 'LoginCtrl'
       })
@@ -81,6 +82,42 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+    .state('tab.addPoint', {
+      url: '/reward/addPoint',
+      views: {
+        'tab-reward': {
+          templateUrl: 'templates/reward-addPoint.html',
+          controller: 'addPointCtrl'
+        }
+      }
+    })
+    .state('tab.beliVKool', {
+      url: '/reward/addPoint/beliVKool',
+      views: {
+        'tab-reward': {
+          templateUrl: 'templates/addPoint-beliVKool.html',
+          controller: 'beliVKoolCtrl'
+        }
+      }
+    })
+    .state('tab.referal', {
+      url: '/reward/addPoint/referal',
+      views: {
+        'tab-reward': {
+          templateUrl: 'templates/addPoint-referal.html',
+          controller: 'referalCtrl'
+        }
+      }
+    })
+    .state('tab.event', {
+      url: '/reward/addPoint/event',
+      views: {
+        'tab-reward': {
+          templateUrl: 'templates/addPoint-event.html',
+          controller: 'eventCtrl'
+        }
+      }
+    })
     .state('tab.news', {
       url: '/news',
       views: {
@@ -128,7 +165,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     });
     //$urlRouterProvider.otherwise('/tab/home');
     if (typeof window.localStorage.getItem("username") == "undefined" || window.localStorage.getItem("username") == "" || window.localStorage.getItem("username") == null) {
-      $urlRouterProvider.otherwise('/login');
+      $urlRouterProvider.otherwise('/login/haha');
     }else{
       $urlRouterProvider.otherwise('/tab/home');
     }

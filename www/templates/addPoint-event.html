@@ -1,0 +1,45 @@
+<style type="text/css">.scroll{height: 100%}</style>
+<ion-view class="" view-title="<img src='img/logo-event.png' height='95%'>">
+	<ion-content class="padding tab-content"  scroll="true">
+		<div class="row">
+	      <span style="color:#fff; text-align: center; margin-top: 15px; margin-bottom: 0; font-weight:300; width: 100%; font-size:130%;">EVENT</span>
+	    </div>
+	    <ion-list>
+	      	<div class="list card" collection-repeat="event in eventList" style="background-color: transparent;">
+			  <div class="item">
+			    <h2>{{event.title}}</h2>
+			    <p>{{event.date}}</p>
+			  </div>
+
+			  <div class="item item-body">
+			    <img class="full-image" ng-src="{{event.img}}">
+			    <p>
+			      This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+			      the content is from a card-body consisting of an image and paragraph text. The footer
+			      consists of tabs, icons aligned left, within the card-footer.
+			    </p>
+			    <p>
+			      <a href="#" class="subdued">1 Like</a>
+			      <a href="#" class="subdued">5 Comments</a>
+			    </p>
+			  </div>
+
+			  <div class="item tabs tabs-secondary tabs-icon-left">
+			    <a class="tab-item" href="#">
+			      <i class="icon ion-thumbsup"></i>
+			      Like
+			    </a>
+			    <a class="tab-item" href="#">
+			      <i class="icon ion-chatbox"></i>
+			      Comment
+			    </a>
+			    <a class="tab-item" href="#">
+			      <i class="icon ion-share"></i>
+			      Share
+			    </a>
+			  </div>
+			  <div style="clear:both;margin:10px;"></div>
+			</div>
+			</ion-list>
+	</ion-content>
+</ion-view>

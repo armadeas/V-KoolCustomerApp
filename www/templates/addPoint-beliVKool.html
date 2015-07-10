@@ -1,0 +1,34 @@
+<style type="text/css">.scroll{height: 100%}</style>
+<ion-view class="" view-title="<img src='img/logo-reward.png' height='95%'>">
+	<ion-content class="padding tab-content"  scroll="true">
+		<div class="row">
+	      <span style="color:#fff; text-align: center; margin-top: 15px; margin-bottom: 5px; font-weight:300; width: 100%; font-size:130%;">PURCHASE V-KOOL</span>
+	    </div>
+	    <div class="list" style="margin-bottom:15px;">
+		  <label class="item item-radio pilihan-addPoint">
+		    <input type="radio" class="pilihan" name="group" checked="true">
+		    <div class="item-content">
+		      By Voucher
+		    </div>
+		    <i class="radio-icon ion-checkmark"></i>
+		    <div class="body">
+		    	<input type="number" placeholder="Insert Voucher Code Here">
+		    </div>
+		  </label>
+			  <label class="item item-radio pilihan-addPoint">
+			    <input type="radio" class="pilihan" name="group">
+			    <div class="item-content">
+			      By Warranty Card
+			    </div>
+			    <i class="radio-icon ion-checkmark"></i>
+			    <div class="body">
+			    	<input type="text" placeholder="Waranty Code">
+			    	<input type="date" placeholder="Expired Waranty">
+			    </div>
+			  </label>
+	      	<button class="button button-block button-energized" style="width: 90%; margin: 0 5% 0 5%;" ng-click="addPointBeli()">
+	      		SEND
+	      	</button>
+      	</div>
+	</ion-content>
+</ion-view>

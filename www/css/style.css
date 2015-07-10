@@ -261,4 +261,29 @@ form.ng-submitted input.ng-valid + i.icon.error {
   height: 60px;
 }
 
+.pilihan-addPoint{
+  margin: 15px 15px 15px 15px;
+  border-radius: 3px;
+}
+.pilihan-addPoint .body{
+  display: block;
+  width: 100%;
+  height:auto;
+  overflow: hidden;
+}
+.pilihan-addPoint .body input{
+  left: 0;
+  padding: 15px 15px 15px 15px;
+  width: 100%;
+  height: 45px;
+  text-align: right;
+  position: inherit;
+}
+.pilihan-addPoint .item-content{
+  background: #F7F7F7;
+}
+.pilihan-addPoint.item-radio input:checked ~ .item-content{
+  background: #E2E2E2;
+}
+
 

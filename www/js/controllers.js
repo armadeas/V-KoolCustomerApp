@@ -1,13 +1,15 @@
-angular.module('starter.controllers', ['ionic', 'ionic-datepicker'])
-.controller('LoginCtrl', function($scope, AuthService, $ionicPopup, $state,$ionicViewService, $stateParams) {
+angular.module('starter.controllers', ['ionic', 'ionic-datepicker', 'ngSanitize'])
+.controller('LoginCtrl', function($scope, AuthService, $ionicPopup, $state, $ionicHistory, $ionicSideMenuDelegate, $stateParams) {
+    $ionicSideMenuDelegate.canDragContent(false)
+    console.log($stateParams);
     if ($stateParams.status=='success') {
-      $scope.login_text = 'Your registration is successful.</br>please check email to activate your account.';
+      $scope.login_text = 'Your registration is successful.<br>please check email to activate your account.';
     } else{
       $scope.login_text = '<a href="#register" >Create An Account</a> or <a href="#" >Forgot Password</a>';
     }
     $scope.data = {};
     $scope.login = function() {
-        AuthService.loginUser({
+        /*AuthService.loginUser({
           'identity' : $scope.data.username,
           'password' : $scope.data.password})
         .success(function(data) {
@@ -21,11 +23,18 @@ angular.module('starter.controllers', ['ionic', 'ionic-datepicker'])
                 title: 'Login failed!',
                 template: data.msg
             });
+        });*/
+        var alertPopup = $ionicPopup.alert({
+            title: 'Debug Login!',
+            template: 'Force Login Enable'
         });
+        $ionicHistory.nextViewOptions({
+          disableBack: true
+        });
+        $state.go('home');
     }
 })
 .controller('RegisCtrl', function($scope, AuthService, $ionicPopup, $state, $filter) {
-
   $scope.data = {};
   $scope.data.birthday = new Date();
   $scope.datePickerCallback = function (val) {
@@ -49,7 +58,7 @@ angular.module('starter.controllers', ['ionic', 'ionic-datepicker'])
      });
      confirmPopup.then(function(res) {
        if(res) {
-        AuthService.registerUser({
+        /*AuthService.registerUser({
           'name' : $scope.data.name,
           'city' : $scope.data.city,
           'phone' : $scope.data.phone,
@@ -65,7 +74,12 @@ angular.module('starter.controllers', ['ionic', 'ionic-datepicker'])
                 title: 'Register failed!',
                 template: 'Please check your credentials!'
             });
-        });
+        });*/
+          var alertPopup = $ionicPopup.alert({
+                title: 'Debug Register',
+                template: 'its debug register please login with random user'
+            });
+          $state.go('login', {'status': 'success'});
        } else {
          console.log('You are not sure');
        }
@@ -213,7 +227,8 @@ angular.module('starter.controllers', ['ionic', 'ionic-datepicker'])
 .controller('shopCtrl', function($scope){
   $scope.shop_list=[{'gambar' : 'img/shop/1.png'}, {'gambar' : 'img/shop/2.png'}, {'gambar' : 'img/shop/3.png'}, {'gambar' : 'img/shop/2.png'}, {'gambar' : 'img/shop/1.png'}];
 })
-.controller('rewardCtrl', function($scope){
+.controller('rewardCtrl', function($scope, $ionicHistory){
+  $ionicHistory.clearHistory();
   $scope.point_reward_list=[
     {'earned_point' : 'Referal',
     'point' : '126 pts',
@@ -373,6 +388,55 @@ angular.module('starter.controllers', ['ionic', 'ionic-datepicker'])
     'used_as' : 'Telkomsel 100K',
     'point' : '-32 pts',
     'date' : '22 Jul 15'}];
+})
+.controller('addPointCtrl', function($scope){
+  //$ionicConfigProvider.backButton.previousTitleText(false).text('Reward');
+})
+.controller('beliVKoolCtrl', function($scope, $ionicPopup){
+  //$ionicConfigProvider.backButton.previousTitleText(false).text('Reward');
+  $scope.addPointBeli = function () {
+    var alertPopup = $ionicPopup.alert({
+        title: 'Thank You',
+        template: '<p style="text-align:center">Your Request will be proceed <br> with in 2 x 24 hours. <br> we will send you an email for confirmation.</p>',
+        okText: 'OK',
+        okType: 'button-energized',
+        cssClass: 'custom-popup'
+
+    });
+  }
+})
+.controller('referalCtrl', function($scope, $ionicPopup){
+    $scope.referFriend = function () {
+        var alertPopup = $ionicPopup.alert({
+            //title: 'Thank You',
+            template: '<p style="text-align:center">Thank You we will send invitation to your friends email.</p>',
+            okText: 'OK',
+            okType: 'button-energized',
+            cssClass: 'custom-popup'
+
+        });
+    }
+})
+.controller('eventCtrl', function($scope){
+    $scope.eventList = [{
+        title : 'V-Kool Ramadhan Sale',
+        date : 'Saturday, 20 June 2015',
+        img  : 'img/event/1.png',
+        text : 'datas'
+    },
+    {
+        title : 'Nobar Bersama V-Kool',
+        date : 'Friday, 12 November 2015',
+        img  : 'img/event/2.png',
+        text : 'jaaja'
+    },
+    {
+        title : 'V-Kool Clearance Sale',
+        date : 'Monday, 2 April 2016',
+        img  : 'img/event/3.png',
+        text : 'wkkws'
+    }];
+  //$ionicConfigProvider.backButton.previousTitleText(false).text('Reward');
 })
 .controller('dataTemanCtrl', function($scope,$state, temanService){
     $scope.showData = function() {
