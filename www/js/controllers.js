@@ -419,24 +419,28 @@ angular.module('starter.controllers', ['ionic', 'ionic-datepicker', 'ngSanitize'
 })
 .controller('eventCtrl', function($scope){
     $scope.eventList = [{
+        event_id : '1',
         title : 'V-Kool Ramadhan Sale',
         date : 'Saturday, 20 June 2015',
         img  : 'img/event/1.png',
-        text : 'datas'
-    },
+        text : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
     {
+        event_id : '2',
         title : 'Nobar Bersama V-Kool',
         date : 'Friday, 12 November 2015',
         img  : 'img/event/2.png',
-        text : 'jaaja'
+        text : "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur si mollit anim id est laborum."
     },
     {
+        event_id : '3',
         title : 'V-Kool Clearance Sale',
         date : 'Monday, 2 April 2016',
         img  : 'img/event/3.png',
-        text : 'wkkws'
+        text : "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }];
   //$ionicConfigProvider.backButton.previousTitleText(false).text('Reward');
+})
+.controller('eventDetailCtrl', function($scope){
 })
 .controller('dataTemanCtrl', function($scope,$state, temanService){
     $scope.showData = function() {

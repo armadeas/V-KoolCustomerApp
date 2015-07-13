@@ -5,41 +5,35 @@
 	      <span style="color:#fff; text-align: center; margin-top: 15px; margin-bottom: 0; font-weight:300; width: 100%; font-size:130%;">EVENT</span>
 	    </div>
 	    <ion-list>
-	      	<div class="list card" collection-repeat="event in eventList" style="background-color: transparent;">
-			  <div class="item">
+	      	<div class="list card eventList" collection-repeat="event in eventList" item-width="100%">
+	      	  <div class="item">
 			    <h2>{{event.title}}</h2>
 			    <p>{{event.date}}</p>
 			  </div>
 
 			  <div class="item item-body">
 			    <img class="full-image" ng-src="{{event.img}}">
-			    <p>
-			      This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-			      the content is from a card-body consisting of an image and paragraph text. The footer
-			      consists of tabs, icons aligned left, within the card-footer.
-			    </p>
-			    <p>
-			      <a href="#" class="subdued">1 Like</a>
-			      <a href="#" class="subdued">5 Comments</a>
+			    <p ng-bind-html="event.text | cut:true:200:' ...'">
 			    </p>
 			  </div>
 
 			  <div class="item tabs tabs-secondary tabs-icon-left">
-			    <a class="tab-item" href="#">
-			      <i class="icon ion-thumbsup"></i>
-			      Like
+			    <a class="tab-item" ng-href="#/tab/reward/addPoint/eventDetail/{{event.event_id}}">
+			      <i class="icon ion-android-funnel"></i>
+			      Detail
 			    </a>
 			    <a class="tab-item" href="#">
-			      <i class="icon ion-chatbox"></i>
-			      Comment
+			      <i class="icon ion-ios-personadd"></i>
+			      Join
 			    </a>
 			    <a class="tab-item" href="#">
 			      <i class="icon ion-share"></i>
 			      Share
 			    </a>
 			  </div>
-			  <div style="clear:both;margin:10px;"></div>
+			  <div style="margin:20px;"></div>
 			</div>
-			</ion-list>
+		</ion-list>
+		<div style="clear:both; margin:15px;"></div>
 	</ion-content>
 </ion-view>

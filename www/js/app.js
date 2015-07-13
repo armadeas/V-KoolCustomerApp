@@ -4,7 +4,25 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+.filter('cut', function () {
+    return function (value, wordwise, max, tail) {
+        if (!value) return '';
 
+        max = parseInt(max, 10);
+        if (!max) return value;
+        if (value.length <= max) return value;
+
+        value = value.substr(0, max);
+        if (wordwise) {
+            var lastspace = value.lastIndexOf(' ');
+            if (lastspace != -1) {
+                value = value.substr(0, lastspace);
+            }
+        }
+
+        return value + (tail || ' …');
+    };
+})
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -22,8 +40,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.views.maxCache(0);
-  $ionicConfigProvider.tabs.position('bottom');
-
+  $ionicConfigProvider.tabs.position('bottom')
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
@@ -115,6 +132,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         'tab-reward': {
           templateUrl: 'templates/addPoint-event.html',
           controller: 'eventCtrl'
+        }
+      }
+    })
+    .state('tab.eventDetail', {
+      url: '/reward/addPoint/eventDetail/:event_id',
+      views: {
+        'tab-reward': {
+          templateUrl: 'templates/eventDetail.html',
+          controller: 'eventDetailCtrl'
         }
       }
     })
