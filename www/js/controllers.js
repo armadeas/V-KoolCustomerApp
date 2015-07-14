@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ionic', 'ionic-datepicker', 'ngSanitize'])
+angular.module('starter.controllers', ['ionic', 'ionic-datepicker', 'ngSanitize', 'uiGmapgoogle-maps', 'ionicLazyLoad'])
 .controller('LoginCtrl', function($scope, AuthService, $ionicPopup, $state, $ionicHistory, $ionicSideMenuDelegate, $stateParams) {
     $ionicSideMenuDelegate.canDragContent(false)
     console.log($stateParams);
@@ -441,6 +441,20 @@ angular.module('starter.controllers', ['ionic', 'ionic-datepicker', 'ngSanitize'
   //$ionicConfigProvider.backButton.previousTitleText(false).text('Reward');
 })
 .controller('eventDetailCtrl', function($scope){
+    $scope.map = { center: { latitude: -6.1684959, longitude: 106.8399495 }, zoom: 14, pan: 1 }; 
+    $scope.marker = {
+        id: 0,
+        coords: {
+          latitude: $scope.map.center.latitude,
+          longitude: $scope.map.center.longitude
+        }
+      }; 
+      $scope.marker.options = {
+        draggable: false,
+        labelContent: "lat: " + $scope.marker.coords.latitude + '<br/> ' + 'lon: ' + $scope.marker.coords.longitude,
+        labelAnchor: "80 120",
+        labelClass: "marker-labels"
+      }; 
 })
 .controller('dataTemanCtrl', function($scope,$state, temanService){
     $scope.showData = function() {

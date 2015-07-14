@@ -5,7 +5,7 @@
 <ion-view class="" view-title="<img src='img/logo-ikool.png' height='95%'>">
 <!-- <ion-view class="landing-page" hide-nav-bar="false"> -->
 
-  <ion-content class="padding landing-page" scroll="false">
+  <ion-content lazy-scroll class="padding landing-page" scroll="false">
     <div class="row" style="margin-top:13%;">
       <span style="color:#fff; font-style: italic; text-align: center; font-weight:500; width: 100%; font-size:135%;">"GOOD MORNING"</span>
     </div>
@@ -24,7 +24,7 @@
     <ion-scroll zooming="false" class="promo-content" direction="y"  style="width: 100%; height: 30% !important">
     <ion-list>
       <ion-item class="item-full list-promo" ng-repeat="promo in promo_list" href="#">
-        <img ng-src="{{promo.gambar}}" width="100%" class="gambar-promo">
+        <img image-lazy-src="{{promo.gambar}}" width="100%" height="auto" class="gambar-promo"  image-lazy-loader="android" image-lazy-distance-from-bottom-to-load="100"  lazy-scroll-resize="true">
       </ion-item>
     </ion-list>
     </ion-scroll>

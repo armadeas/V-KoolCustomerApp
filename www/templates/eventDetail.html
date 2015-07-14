@@ -1,8 +1,55 @@
 <style type="text/css">.scroll{height: 100%}</style>
 <ion-view class="" view-title="<img src='img/logo-event.png' height='95%'>">
-	<ion-content class="padding tab-content"  scroll="true">
+	<ion-content class="padding tab-content"  scroll="true" style="padding: 15px">
 		<div class="row">
 	      <span style="color:#fff; text-align: center; margin-top: 15px; margin-bottom: 0; font-weight:300; width: 100%; font-size:130%;">EVENT DETAILS</span>
 	    </div>
+	    <div class="list card" item-width="100%">
+	      	  <div class="item">
+			    <h2 style="text-align:center; font-weight:600;">V-Kool Ramadhan Sale</h2>
+			    <!-- <p>10 june 2012</p> -->
+			  </div>
+
+			  <div class="item item-body">
+			    <img class="full-image" ng-src="img/event/1.png">
+			    <p>
+			    	<b>Saturday, 10 August 2015</b>
+			    </p>
+			    <p style="margin-bottom:8px;">
+			    	<b>Event :</b>
+			    	<span>V-Kool Spesial discount ramadhan Style Jabodetabek</span>
+			    </p>
+			    <p style="margin-top:8px;">
+			    	<b>Vanue :</b>
+			    	<span>Depok Town Square (Detos) Margonda, Depok</span>
+			    </p>
+			    <p>
+			    	<b>V-Kool Member Benefit</b><br>
+			    	<ul style="font-size:14px;">
+			    		<li>1. Dapatkan Diskon 30 Point untuk melakukan Reward</li>
+			    		<li>2. Diskon 30% untuk pembelian ke 3</li>
+			    	</ul>
+			    </p>
+			    <h2 style="text-align:center">Event Maps</h2>
+			    <div style="width:100%; height:300px;overflow:hidden" data-tap-disabled="true">
+			    	<ui-gmap-google-map center='map.center' zoom='map.zoom'>
+			    		<ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id" closeClick="hideMarkerPopup()" onClicked="showMarkerPopup()">
+			    	</ui-gmap-google-map>
+			    </div>
+			    <!-- <p ng-bind-html="event.text | cut:true:200:' ...'">adadasdas
+			    </p> -->
+			  </div>
+
+			  <div class="item tabs tabs-secondary tabs-icon-left">
+			    <a class="tab-item" href="#" style="font-size:15px;">
+			      <i class="icon ion-ios-personadd"></i>
+			      Join
+			    </a>
+			    <a class="tab-item" href="#" style="font-size:15px;">
+			      <i class="icon ion-share"></i>
+			      Share
+			    </a>
+			  </div>
+			</div>
 	</ion-content>
 </ion-view>

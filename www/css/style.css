@@ -294,6 +294,13 @@ form.ng-submitted input.ng-valid + i.icon.error {
 .eventList .tabs .tab-item{
   color: inherit !important;
   opacity: 0.7;
+  font-size: 15px;
+}
+.angular-google-map{
+  height: 100%;
+}
+.angular-google-map-container{
+  height: 100%
 }
 
 
